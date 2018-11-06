@@ -1,0 +1,213 @@
+.leftview{
+  width:-webkit-calc(50% - 4px);
+  width:-moz-calc(50% - 4px);
+  width:calc(50% - 4px);
+  height: -webkit-calc(50% - 5px);
+  height:-moz-calc(50% - 5px);
+  height:calc(50% - 5px);
+  float: left;
+  top: 1px;
+  display: inline-block;
+  position: relative; ;
+  //background: #003eff;
+  border: solid 2px #007fff;
+
+
+}
+
+.rightview{
+  width:-webkit-calc(50% - 4px);
+  width:-moz-calc(50% - 4px);
+  width:calc(50% - 4px);
+  height: -webkit-calc(50% - 5px);
+  height:-moz-calc(50% - 5px);
+  height:calc(50% - 5px);
+  float:right;
+  top: 1px;
+  display: inline-block;
+  position: relative;
+ // background: #777620;
+  border: solid 2px #007fff;
+  text-align: center;
+}
+
+.bottomview{
+  width:-webkit-calc(100% - 5px);
+  width:-moz-calc(100% - 5px);
+  width:calc(100% - 5px);
+  height: -webkit-calc(50% - 5px);
+  height:-moz-calc(50% - 5px);
+  height:calc(50% - 5px);
+  float: left;
+  bottom: 2px;
+  border: solid 2px #007fff;
+ // background: #dad55e;
+  text-align: center;
+}
+
+.List_ip{
+  width:-webkit-calc(75% - 2px);
+  width:-moz-calc(75% - 2px);
+  width:calc(75% - 2px);
+  height: 100%;
+  float: left;
+  display: inline-block;
+ // background: #555555;
+}
+
+.Setbutton{
+  width: 25%;
+  height: 100%;
+  float: right;
+  display: inline-block;
+//  background: #5f3f3f;
+  border-left: #007fff solid 2px;
+}
+
+.ipciptab{
+  width: 100%;
+  text-align: center;
+}
+.heads{
+  position: relative;
+  top: 1px;
+  //background: #007fff;
+  text-align: center;
+
+}
+.tabdata{
+  overflow: auto;
+  height: 79%;
+  border-top: dotted 2px #181eff;
+
+}
+
+.tabhead{
+  height: 14%;
+  left: 0px;
+}
+
+.tabhead th{
+  text-align: center;
+  font-size: 1em;
+  color: #007fff;
+}
+.mouldname{
+  height: 5%;
+  text-align: center;
+ // color: #b8ff0c;
+}
+.page1 button{
+  color: #000000;
+//  background: #ff1012;
+}
+
+.ipciptab tbody tr:nth-child(odd){
+  background-color: #e9e9e9;
+}
+
+.ipciptab tbody tr:nth-child(even){
+  background: #ffffff;
+}
+
+.ipciptab tbody tr:nth-child(odd) input{
+  background-color: #e9e9e9;
+  text-align: center;
+
+}
+
+.ipciptab tbody tr:nth-child(even) input{
+  background: #ffffff;
+  text-align: center;
+
+}
+
+.tabdata td{
+  width: 20%;
+}
+
+.Setbutton div{
+ display: inline;
+  width:-webkit-calc(50% + 4px);
+  width:-moz-calc(50% + 4px);
+  width:calc(50% + 4px);
+  height: 50%;
+}
+
+.page1 h4{
+  float: top;
+  color: #007fff;
+  height: 20px;
+}
+
+.heads :nth-child(1){
+  left: 0px;
+  position: relative;
+}
+
+.heads :nth-child(5) button{
+  background:#e9e9e9;
+  width: 100%;
+  height: 100%;
+ // color: white;
+}
+
+.heads  :nth-child(6) button{
+  background:#aaaaaa;
+  width: 100%;
+  height: 100%;
+// color: white;
+}
+
+.Setbutton div{
+  width: 49%;
+  height: 33%;
+  display: inline-block;
+}
+
+.Setbutton :nth-child(1)  button{
+  width: 100%;
+  height: 100%;
+  background: #aaaaaa;
+  font-size: 1em ;
+  //color: #ffffff;
+}
+
+.Setbutton  :nth-child(2) button{
+  width: 100%;
+  height: 100%;
+  background: #e9e9e9;
+  font-size: 1em ;
+//color: #ffffff;
+}
+
+.Setbutton :nth-child(4)  button{
+  width: 100%;
+  height: 100%;
+  background: #aaaaaa;
+  font-size: 1em ;
+//color: #ffffff;
+}
+
+.Setbutton  :nth-child(3) button{
+  width: 100%;
+  height: 100%;
+  background: #e9e9e9;
+  font-size: 1em ;
+//color: #ffffff;
+}
+.Setbutton :nth-child(5)  button{
+  width: 100%;
+  height: 100%;
+  background: #aaaaaa;
+  font-size: 1em ;
+//color: #ffffff;
+}
+
+.Setbutton  :nth-child(6) button{
+  width: 100%;
+  height: 100%;
+  background: #e9e9e9;
+  font-size: 1em ;
+//color: #ffffff;
+}

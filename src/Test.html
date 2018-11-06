@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MVR 控制</title>
+    <link type="text/css" rel="stylesheet" href="../src/css/testcss.css" charset="UTF-8">
+
+</head>
+<body>
+
+<!--<div id="headline">控制中心</div>
+
+<!--<div id="tab" >
+  <h3 class="up" onclick="go_to(1)">界面一</h3>
+  <h3 onclick="go_to(2)">界面二</h3>
+</div>
+
+  <div id="one" class="block">
+     <div id="Mainview" class="Mainview">
+       <div id="srcdiv" >
+       <h2>元素集合</h2>
+        <div draggable="true" ondragstart="dsmove(event)">元素1</div>
+         <div draggable="true" ondragstart="dsmove(event)">元素2</div>
+     <div draggable="true" ondragstart="dsmove(event)">元素3</div>
+   </div>
+  <div id="destdiv"  draggable="true">
+  <h2 ondragleave="return false;">目标集合</h2>
+  </div>
+<!-- <img id="dragico" src="favicon.ico" alt="拖动中" />
+<img id="deleate" src="icon.png" alt="删除" draggable="false" />
+   </div>
+  </div>
+
+  <div id="two">
+<div id="discview" class="discview">
+ <div class="w1200" ><bar></bar>
+  <div> <a href="http://www.baidu.com">百度首页</a></div>
+  <div> <a href="http://www.360.com">360首页</a></div>
+  <div><a href="icon.png">图标</a></div>
+   <div><a href="main%20view.html">Main 主页</a></div>
+</div>
+ <table>
+  <tr>
+    <td><a href="http://www.12345.com">12345</a> </td>
+    <td><a href="http://www.baidu.com">BaiDu</a> </td>
+    <td><p>导航页</p></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.sohu.com">搜狐</a> </td>
+    <td><a href="http://www.163.com">网易</a></td>
+    <td><p>门户网</p> </td>
+  </tr>
+  </table>
+  </div>
+  </div>
+-->
+<div id="tab">
+  <h3 class="up" onclick="go_to(1)">页面一</h3>
+  <h3 class="Noup" onclick="go_to(2)" >页面二</h3>
+  <h3 class="Noup" onclick="go_to(3)">页面三</h3>
+  <h3 class="Noup" onclick="go_to(4)">页面四</h3>
+  <!-- first case -->
+  <div id="case1" class="block">
+    <!--
+    <div id="Mainview" class="Mainview">
+      <div id="srcdiv" >
+        <h2>元素集合</h2>
+        <div draggable="true" ondragstart="dsmove(event)">元素1</div>
+        <div draggable="true" ondragstart="dsmove(event)">元素2</div>
+        <div draggable="true" ondragstart="dsmove(event)">元素3</div>
+      </div>
+      <div id="destdiv"  draggable="true">
+        <h2 ondragleave="return false;">目标集合</h2>
+      </div>
+      <!-- <img id="dragico" src="favicon.ico" alt="拖动中" /> --
+      <img id="deleate" src="icon.png" alt="删除" draggable="false" />
+    </div> -->
+    <P>页面一 敬请期待</P>
+  </div>
+        <!-- secend case -->
+  <div class="Noblock" id="case2" >
+    <!--
+    <div id="discview" class="discview">
+      <div class="w1200" ><bar></bar>
+        <div> <a href="http://www.baidu.com">百度首页</a></div>
+        <div> <a href="http://www.360.com">360首页</a></div>
+        <div><a href="icon.png">图标</a></div>
+        <div><a href="main%20view.html">Main 主页</a></div>
+      </div>
+      <table>
+        <tr>
+          <td><a href="http://www.12345.com">12345</a> </td>
+          <td><a href="http://www.baidu.com">BaiDu</a> </td>
+          <td><p>导航页</p></td>
+        </tr>
+        <tr>
+          <td><a href="http://www.sohu.com">搜狐</a> </td>
+          <td><a href="http://www.163.com">网易</a></td>
+          <td><p>门户网</p> </td>
+        </tr>
+      </table>
+    </div> -->
+  </div>
+  <!-- three case -->
+  <div class="Noblock" id="case3" >
+    <p>第三页面 敬请期待</p>
+  </div>
+  <!-- four case -->
+  <div class="Noblock" id="case4" >
+  <p>第四页面 敬请期待</p>
+  </div>
+</div>
+<script type="text/javascript">
+
+  const  go_to = function(ao) {
+    const h=document.getElementById("tab").getElementsByTagName("h3");
+    const d=document.getElementById("tab").getElementsByTagName("div");
+
+    //alert(d.length);
+    for(var i =0 ;i<(h.length);i++){
+
+      if(ao-1==i ){
+        h[i].className+="up";
+        d[i].className+="block";
+      }else{
+        h[i].className+="NOup";
+        d[i].className+="Noblock";
+
+      }
+    }
+  }
+</script>
+<!--<div id="footer">底部信息</div>-->
+<!--<script type="text/javascript" src="./js/test_js.js"></script> -->
+</body>
+</html>

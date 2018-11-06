@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>system</title>
+  <link type="text/css" rel="stylesheet" href="css/jquery-ui.css">
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/dhtmlx.css">
+  <link type="text/css" rel="stylesheet" href="css/windows.css">
+  <link type="text/css" rel="stylesheet" href="css/update.css">
+
+  <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="js/jquery.json-2.4.js"></script>
+  <script type="text/javascript" src="js/dhtmlx.js"></script>
+  <script type="text/javascript" src="js/message.js"></script>
+  <script type="text/javascript" src="js/util.js"></script>
+
+  <script type="text/javascript" src="js/channel.js"></script>
+  <script type="text/javascript" src="js/windows.js"></script>
+  <script type="text/javascript" src="js/mode.js"></script>
+  <script type="text/javascript" src="js/progress.js"></script>
+  <script type="text/javascript" src="js/setup.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  <script type="text/javascript" src="js/communication.js"></script>
+  <script type="text/javascript" src="js/update.js"></script>
+
+</head>
+<body onload="mainload();">
+
+<div class="header" id="header">
+
+  <div class="w1200">
+    <div class="fl">Multi-Purpose Video Over IP Controller</div>
+    <div class="fr">
+      <p>Admin</p>
+      <p><u onclick="javscript:logout();">Log Out</u></p>
+    </div>
+    <div class="fr"><span class="glyphicon glyphicon-user"></span></div>
+  </div>
+
+</div>
+<nav>
+  <div class="w1200">
+    <ul class="menu clear">
+      <li class="tab-1 active">Main</li>
+      <li class="tab-2">Video Wall Config</li>
+      <li class="tab-3">System</li>
+      <li class="tab-4">RX</li>
+      <li class="tab-5">TX</li>
+      <li class="tab-6">Serial</li>
+      <li class="tab-7">IP Source</li>
+      <li class="tab-8">Update</li>
+    </ul>
+  </div>
+</nav>
+<div class="content w1200">
+  <div class="content-1" style="display: block;">
+    <div class="content-1-left fl">
+      <h2><span class="glyphicon glyphicon-log-in"></span> Device List <span class="glyphicon glyphicon-repeat search" id="searching"></span></h2>
+      <h3>RX</h3>
+      <div class="rx_table">
+        <table>
+          <tbody id="rxbody">
+
+          <tr>
+              <td class="td1"><i></i>unnamed</td>
+              <td class="td2" >192.168.168.1.53</td>
+              <td class="td3">
+                  <input class="active" type="button" name="" value="2x">
+              </td>
+              <td class="td3">
+                  <input type="button" name="" value="4x">
+              </td>
+              <td class="td3">
+                  <input type="button" name="" value="5x">
+              </td>
+          </tr>
+          <tr>
+              <td class="td1"><i></i>unnamed</td>
+              <td class="td2" >192.168.168.1.53</td>
+              <td class="td3">
+                  <input class="active" type="button" name="" value="2x">
+              </td>
+              <td class="td3">
+                  <input type="button" name="" value="4x">
+              </td>
+              <td class="td3">
+                  <input type="button" name="" value="5x">
+              </td>
+          </tr>
+          <tr>
+              <td class="td1"><i></i><a href=""><input type="" name="" value="QQQQQQQQ"></a></td>
+              <td class="td2" ><a href="">192.168.168.153</a></td>
+              <td class="td3">
+                  <input class="active" type="button" name="" value="2x">
+              </td>
+              <td class="td3">
+                  <input type="button" name="" value="4x">
+              </td>
+              <td class="td3">
+                  <input type="button" name="" value="5x">
+              </td>
+          </tr>
+          <tr>
+              <td class="td1"><i></i><a href=""><span>TV1</span></a></td>
+              <td class="td2" ><a href="">192.168.168.153</a></td>
+              <td class="td3">
+                  <input class="active" type="button" name="" value="2x">
+              </td>
+              <td class="td3">
+                  <input type="button" name="" value="4x">
+              </td>
+              <td class="td3">
+                  <input type="button" name="" value="5x">
+              </td>
+          </tr>
+
+          </tbody>
+        </table>
+      </div>
+      <h3>TX</h3>
+      <div class="tx_table">
+        <table>
+          <tbody id="txbody">
+
+          <tr>
+              <td class="td1"><i></i>unnamed</td>
+              <td class="td2" >192.168.168.1.53</td>
+              <td class="td3">
+                  <input class="active" type="button" name="" value="2x">
+              </td>
+              <td class="td3">
+                  <input type="button" name="" value="4x">
+              </td>
+              <td class="td3">
+                  <input type="button" name="" value="5x">
+              </td>
+          </tr>
+          <tr>
+              <td class="td1"><i></i>unnamed</td>
+              <td class="td2" >192.168.168.1.53</td>
+              <td class="td3">
+                  <input class="active" type="button" name="" value="2x">
+              </td>
+              <td class="td3">
+                  <input type="button" name="" value="4x">
+              </td>
+              <td class="td3">
+                  <input type="button" name="" value="5x">
+              </td>
+          </tr>
+
+          </tbody>
+        </table>
+      </div>
+      <h3>STREAM</h3>
+      <div class="stream_table">
+        <table>
+          <tbody id="ipbody">
+
+          <tr>
+              <td class="td1"><i></i>unnamed</td>
+              <td class="td2" >192.168.168.1.53</td>
+              <td class="td3">
+                  <input class="active" type="button" name="" value="2x">
+              </td>
+              <td class="td3">
+                  <input type="button" name="" value="4x">
+              </td>
+              <td class="td3">
+                  <input type="button" name="" value="5x">
+              </td>
+          </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="content-1-middle fl" id="mainctrl">
+      <div id="tabs" >
+        <ul id="tabs-header" class="clear">
+          <li id="tabsn1" class="active">Video Wall</li>
+          <li id="tabsn2">Unicast</li>
+          <li id="tabsn3">Multicast</li>
+        </ul>
+
+        <div id="tabs-VideoWall" class="contentsm1" style="display: none;">
+          <!-- backgroud window - bigger one -->
+          <Canvas id="vwcanvas" name="vwcanvas" style="background-color: #004040; margin: 0px; width: 100%;height: 100%"></Canvas>
+
+          <!--float foreground window - small window -->
+          <div id="vwwin" name="vwwin" style="float:left; width:100%;height: 100%;">
+          </div>
+        </div>
+        <div id="tabs-Unicast" class="contentsm2" style="display: none;">
+          <Canvas id="unicanvas" name="unicanvas" style="background-color: #004040; margin: 0px;"></Canvas>
+
+          <div id="uniwin" name="uniwin" style="float:left; width:100%;height: 100%;">
+          </div>
+        </div>
+        <div id="tabs-Multicast" class="contentsm3" style="display: none;">
+          <Canvas id="mulcanvas" name="mulcanvas" style="background-color: #004040; margin: 0px;"></Canvas>
+
+          <div id="mulwin" name="mulwin" style="float:left; width:100%;height: 100%;">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content-1-right fr">
+      <h2 id="modesmanagement"><span class="glyphicon glyphicon-file"></span> Scene Management</h2>
+      <h3><span id="AddModel" class="glyphicon glyphicon-plus"></span><input type="button" value="Add Scene" /></h3>
+      <table class="table table-striped table-bordered table-hover datatable" id="tbmode">
+        <tbody id="modes">
+
+        <tr>
+           <td class="td1"><i></i>Mode 1</td>
+           <td class="td2" ><span class="glyphicon glyphicon-floppy-open"></span></td>
+           <td class="td2"><span class="glyphicon glyphicon-floppy-save"></span></td>
+           <td class="td2"><span class="glyphicon glyphicon-floppy-remove"></span></td>
+        </tr>
+        <tr>
+           <td class="td1"><i></i>Mode 2</td>
+           <td class="td2" ><span class="glyphicon glyphicon-floppy-open"></span></td>
+           <td class="td2"><span class="glyphicon glyphicon-floppy-save"></span></td>
+           <td class="td2"><span class="glyphicon glyphicon-floppy-remove"></span></td>
+        </tr>
+        <tr>
+           <td class="td1"><i></i>Mode 3</td>
+           <td class="td2" ><span class="glyphicon glyphicon-floppy-open"></span></td>
+           <td class="td2"><span class="glyphicon glyphicon-floppy-save"></span></td>
+           <td class="td2"><span class="glyphicon glyphicon-floppy-remove"></span></td>
+        </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+  <div class="content-2" style="display: none;">
+    <fieldset>
+      <h4>Video Wall Config</h4>
+      <hr>
+      <table width="900" cellspacing="10" board="0">
+        <tr>
+          <th width="50%"></th>
+          <th width="50%"></th>
+        </tr>
+        <h5>Screen Layout</h5>
+        <tr>
+          <td>
+            <p>Row:</p>
+          </td>
+          <td>
+            <input type="text" style="height:25px;" id="vsrow" /> (1 - 4)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>Column:</p>
+          </td>
+          <td>
+            <input type="text" style="height:25px;" id="vscol" /> (1 - 4)
+          </td>
+        </tr>
+      </table>
+      <button class="btn" id="vw_settings_apply" onclick="apply_vs_maps();">Apply</button>
+      <hr>
+      <table width="900" cellspacing="10" board="0">
+        <tr>
+          <th width="50%"></th>
+          <th width="50%"></th>
+        </tr>
+        <h5>Bezeland Gap Compensation</h5>
+        <tr>
+          <td>
+            <p>Horizontal Cut:</p>
+          </td>
+          <td>
+            <input type="text" style="height:25px;" id="vshorcut" /> (0 - 8)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>Vertical Cut:</p>
+          </td>
+          <td>
+            <input type="text" style="height:25px;" id="vsvercut" /> (0 - 8)
+          </td>
+        </tr>
+      </table>
+      <button class="btn" id="vw_cut_apply" onclick="apply_vs_cut();">Apply</button>
+    </fieldset>
+  </div>
+  <div class="content-3" id="setup_page" style="display: none;">
+    <fieldset>
+      <h4>Device IP Config</h4>
+      <hr>
+      <table width="900" cellspacing="10" board="0">
+        <tr>
+          <td>
+            <p>IP Address:</p>
+          </td>
+          <td>
+            <select class="form-control" style="overflow:left;" name="sysipmac" id="sysipmac" onchange="javascript:system_changeipmac();"></select>
+          </td>
+          <td>
+            <p>new IP Address:</p>
+          </td>
+          <td>
+            <input type="text" id="sysip" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>Subnet Mask:</p>
+          </td>
+          <td>
+            <input type="text" id="sysnetmask" />
+          </td>
+          <td>
+            <p>Gateway:</p>
+          </td>
+          <td>
+            <input type="text" id="sysgateway" />
+          </td>
+        </tr>
+      </table>
+      <button class="btn" id="apply_system_changeip" onclick="javascript:system_changeip_apply();">Apply</button>
+    </fieldset>
+
+    <fieldset>
+      <h4>Web Multi-Controller Settings</h4>
+      <hr>
+      <table>
+        <tr>
+          <th width="30%"></th>
+          <th width="30%"></th>
+        </tr>
+        <tr>
+          <td><label>Controller Master:
+            <input class="checkbox" type="checkbox" id="multi-controller-master" style="position: relative;top: 2px;left: 10px;" onclick="javascript:multi_controller_settings();" ></input></label>
+          </td>
+        </tr>
+      </table>
+    </fieldset>
+    <fieldset>
+      <h4>FW Version Info</h4>
+      <hr>
+      <table>
+        <tr>
+          <th width="30%"></th>
+          <th width="30%"></th>
+        </tr>
+        <tr>
+          <td>Model:</td>
+          <td id="model_version_info"></td>
+        </tr>
+        <tr>
+          <td>Version:</td>
+          <td id="version_version_info"></td>
+        </tr>
+        <tr>
+          <td>Build:</td>
+          <td id="buildTime_version_info"></td>
+        </tr>
+      </table>
+    </fieldset>
+
+    <fieldset>
+      <h4>Web Controller Password</h4>
+      <hr>
+      <table>
+        <tr>
+          <td style="padding-right: 15px;">New Password:</td>
+          <td>
+            <input type="password" id="newpassword" value="" maxLength="16" class="text" />
+            <img id="newpasswordright" src="images/right.png" alt="right" style="display:none;width:20px" />
+            <img id="newpassworderror" src="images/error.png" alt="error" style="display:none;width:20px" />
+            <label>
+              <span class="gen-text-important">(Attention)</span>
+              Password must be  4 to 16 characters or digitals.
+            </label>
+          </td>
+        </tr>
+      </table>
+      <div style="display:block">
+        <button id="change_password_apply" class="btn gen-button-apply" onclick="change_password_apply()">Apply</button>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <h4>Web Controller Commands</h4>
+      <hr>
+      <button class="btn" onclick="device_reboot()">Reboot</button>
+      <button class="btn" style="width:300px;" onclick="device_factory_default()">Reset To Factory Default</button>
+    </fieldset>
+
+    <fieldset>
+      <h4>Commands</h4>
+      <hr>
+      <input type="text" class="text" style="height:25px; width:500px" id="cmdLine1" onkeyup="keyup();" />
+      <button class="btn" onclick="javascript:sendCmdToDevice();">Send Commands</button>
+      <button class="btn" onclick="javascript:clearCmd();">Clear Log</button>
+    </fieldset>
+    <fieldset>
+      <h4>Log(Only display the latest 20 records)</h4>
+      <hr>
+      <div id="console" style="overflow:left; max-width:100%; max-height:800px; min-height:300px;"></div>
+    </fieldset>
+  </div>
+
+  <div class="content-4" style="display: none;">
+    <fieldset>
+      <h4>RX Settings</h4>
+      <hr>
+      <table width="900" cellspacing="10" board="0">
+        <tr>
+          <th width="25%"></th>
+          <th width="25%"></th>
+          <th width="25%"></th>
+          <th width="25%"></th>
+        </tr>
+        <h5>Net Settings</h5>
+        <tr>
+          <td>
+            <p>RX IP:</p>
+          </td>
+          <td>
+            <select class="form-control" style="overflow:left;" name="deciplist" id="deciplist" onchange="javascript:decoder_changeip();">
+            </select>
+          </td>
+          <td>
+          </td>
+          <td>
+            <input type="text" id="decname" value=" " style="display: none">
+          </td>
+        </tr>
+      </table>
+      <table width="900" cellspacing="10" board="0">
+        <tr>
+          <th width="25%"></th>
+          <th width="25%"></th>
+          <th width="25%"></th>
+          <th width="25%"></th>
+        </tr>
+        <h5>Picture Settings</h5>
+        </tr>
+        <tr>
+          <td>
+            <p>Brightness:</p>
+          </td>
+          <td>
+            <input type="text" id="decluma" value = 50 /> (0 - 100)
+          </td>
+          <td style="padding-left: 80px;">
+            <p>Contrast:</p>
+          </td>
+          <td>
+            <input type="text" id="deccontrast" value = 50 /> (0 - 100)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>Hue:</p>
+          </td>
+          <td>
+            <input type="text" id="dechue" value = 50 /> (0 - 100)
+          </td>
+          <td style="padding-left: 80px;">
+            <p>Saturation:</p>
+          </td>
+          <td>
+            <input type="text" id="decsaturation" value = 50 /> (0 - 100)
+          </td>
+        </tr>
+      </table>
+      <table width="900" cellspacing="10" board="0">
+        <tr>
+          <th width="25%"></th>
+          <th width="25%"></th>
+          <th width="25%"></th>
+          <th width="25%"></th>
+        </tr>
+        <h5>Audio Settings</h5>
+        <tr>
+          <th width="25%"></th>
+          <th width="25%"></th>
+          <th width="25%"></th>
+          <th width="25%"></th>
+        </tr>
+        <tr>
+          <td>
+            <p>Audio Output Select:</p>
+          </td>
+          <td>
+            <select class="form-control" style="overflow:left;" name="decaudio" id="decaudio"></select>
+          </td>
+        </tr>
+      </table>
+      <button class="btn" id="apply_decoder_settings" onclick="javascript:decoder_settings_apply();">Apply</button>
+    </fieldset>
+
+    <fieldset>
+      <h4>Version & Status</h4>
+      <hr>
+      <div id="dec_device_info"></div>
+      <button class="btn gen-button-apply" onclick="decoder_status_statistics_refresh()">Refresh</button>
+    </fieldset>
+  </div>
+  <div class="content-5" id="TX_Setting_page" style="display: none;">
+    <fieldset>
+      <h4>TX Settings</h4>
+      <hr>
+      <table width="900" cellspacing="10" board="0">
+        <tr>
+          <th width="25%"></th>
+          <th width="25%"></th>
+          <th width="25%"></th>
+          <th width="25%"></th>
+        </tr>
+        <h5>Net Settings</h5>
+        <tr>
+          <td>
+            <p>TX IP:</p>
+          </td>
+          <td>
+            <select class="form-control" style="overflow:left;" name="enciplist" id="enciplist" onchange="javascript:encoder_changeip();">
+            </select>
+          </td>
+          <td>
+          </td>
+          <td>
+            <input type="text" id="encname" value=" " style="display:none">
+          </td>
+        </tr>
+      </table>
+      <table width="900" cellspacing="10" board="0">
+        <tr>
+          <th width="25%"></th>
+          <th width="25%"></th>
+          <th width="25%"></th>
+          <th width="25%"></th>
+        </tr>
+        <h5>Picutre Settings</h5>
+        <tr>
+          <td>
+            <p>Frame Rate:</p>
+          </td>
+          <td>
+            <input type="text" style="height:25px;" id="encfps" />
+          </td>
+          <td style="padding-left: 80px;">
+            <p>Rate Control:</p>
+          </td>
+          <td>
+
+        </tr>
+      </table>
+      <table width="900" cellspa<select class="form-control" style="overflow:left;" name="encratectrl" id="encratectrl"></select>
+      </td>
+      </tr>
+      <tr>
+
+        <td>
+          <p>Bitrate:</p>
+        </td>
+        <td>
+          <select class="form-control" style="overflow:left;" name="encbitrate" id="encbitrate"></select>
+        </td>cing="10" board="0">
+        <tr>
+          <th width="25%"></th>
+          <th width="25%"></th>
+          <th width="25%"></th>
+          <th width="25%"></th>
+        </tr>
+        <h5>Audio Settings</h5>
+        <tr>
+          <td>
+            <p>Audio Input Select:</p>
+          </td>
+          <td>
+            <select class="form-control" style="overflow:left;" name="encaudioin" id="encaudioin"></select>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>Audio Output Select:</p>
+          </td>
+          <td>
+            <select class="form-control" style="overflow:left;" name="encaudioout" id="encaudioout"></select>
+          </td>
+        </tr>
+      </table>
+      <button class="btn" id="encoder_settings_apply" onclick="encoder_settings_apply();">Apply</button>
+    </fieldset>
+
+    <fieldset>
+      <h4>Version & Status</h4>
+      <hr>
+      <div id="enc_device_info"></div>
+      <button class="btn" class="gen-button-apply" onclick="encoder_status_statistics_refresh()">Refresh</button>
+    </fieldset>
+
+  </div>
+  <div class="content-6" style="display: none;">
+    <fieldset>
+      <h4>RS-232 Settings</h4>
+      <hr>
+      <table width="900" cellspacing="10" board="0">
+        <tr>
+          <th width="25%"></th>
+          <th width="25%"></th>
+          <th width="25%"></th>
+          <th width="25%"></th>
+        </tr>
+        <tr>
+          <td>
+            <p>Source IP:</p>
+          </td>
+          <td>
+            <select class="form-control" style="overflow:left;" name="sersrciplist" id="sersrciplist" onchange="javascript:serial_changeip();"></select>
+          </td>
+          <td>
+            <p>Destination IP:</p>
+          </td>
+          <td>
+            <select class="form-control" style="overflow:left;" name="serdesip" id="serdesip"></select>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>Baud Rate:</p>
+          </td>
+          <td>
+            <select class="form-control" style="overflow:left;" name="serbaud" id="serbaud"></select>
+          </td>
+          <td>
+            <p>Parity:</p>
+          </td>
+          <td>
+            <select class="form-control" style="overflow:left;" name="serparity" id="serparity"></select>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>Stop Bits:</p>
+          </td>
+          <td>
+            <select class="form-control" style="overflow:left;" name="serstopbits" id="serstopbits"></select>
+          </td>
+          <td>
+            <p>Data Bits:</p>
+          </td>
+          <td>
+            <select class="form-control" style="overflow:left;" name="serdatabits" id="serdatabits"></select>
+          </td>
+        </tr>
+        <tr>
+          <td><label>Transmission Enable:
+            <input class="checkbox" type="checkbox" class="form-control" style="position: relative;top: 2px;left: 10px;" name="serserbynet" id="serserbynet"></input></label>
+          </td>
+        </tr>
+      </table>
+      <button class="btn" id="apply_device_serial" onclick="javascript:device_serial_set();">Apply</button>
+    </fieldset>
+
+  </div>
+  <div class="content-7" style="display: none;">
+    <fieldset>
+      <h4>Extra IP Source</h4>
+      <hr>
+      <label>Add<input class="radio" type="radio" name="ip_source_radio" id="ip_source_radio" value="add" checked onclick="javascript:radiocheckIPSource();"/></label>
+      <label>Edit<input class="radio" type="radio" name="ip_source_radio" id="ip_source_radio" value="edit" onclick="javascript:radiocheckIPSource();" /></label>
+      <table id="tbipsource" name="tbipsource" class="table table-striped table-bordered table-hover datatable" style="width: 80%;">
+        <tr>
+          <th width="20%"></th>
+          <th width="30%"></th>
+          <th width="20%"></th>
+          <th width="30%"></th>
+        </tr>
+        <tr>
+          <td>
+            <p>Device Ip:</p>
+          </td>
+          <td>
+            <input type="text" maxLength=16 style="height:25px;" id="esip_text" />
+          </td>
+          <td>
+            <p>Device Type:</p>
+          </td>
+          <td>
+            <select class="form-control" style="overflow:left;" name="devlistsource" id="devlistsource" onchange="javascript:select_ipsource_type();"></select>
+          </td>
+
+        </tr>
+        <tr>
+          <td>
+            <p>Device Name:</p>
+          </td>
+          <td>
+            <input type="text" maxLength=8 style="height:25px;" id="esname" />
+          </td>
+          <td>
+            <p>Live Port:</p>
+          </td>
+          <td>
+            <input type="text" maxLength=5 style="height:25px; " id="esport" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>User:</p>
+          </td>
+          <td>
+            <input type="text" maxLength=16 style="height:25px; " id="esuser" />
+          </td>
+          <td>
+            <p>PassWord:</p>
+          </td>
+          <td>
+            <input type="text" maxLength=16 style="height:25px; " id="espass" />
+          </td>
+        </tr>
+      </table>
+      <table id="tbipsource1" name="tbipsource1" class="table table-striped table-bordered table-hover datatable" style="width: 80%;">
+        <tr>
+          <th width="20%" colspan="1"></th>
+          <th width="80%" colspan="3"></th>
+        </tr>
+        <tr>
+          <td>00
+            <p>Url:</p>
+          </td>
+          <td>
+            <input type="text" style="width:589px; height:25px;" id="esurl" />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <p>Communication:</p>
+          </td>
+          <td>
+            <label>Tcp <input class="radio" type="radio" name="commgroup1" id="commgroup1" onclick="javascript:radiocheckComm();" /></label>
+            <label>Udp <input class="radio" type="radio" name="commgroup1" id="commgroup1" onclick="javascript:radiocheckComm();" /></label>
+          </td>
+        </tr>
+      </table>
+      <button class="btn" id="ip_source_apply" onclick="javascript:ip_source_apply();">Apply</button>
+      <button class="btn" id="ip_source_delete" onclick="javascript:ip_source_delete();" style="display: none;">Delete</button>
+      <button class="btn" id="ip_source_delete" onclick="javascript:ip_source_delete();">Delete</button>
+
+  </div>
+  <div class="content-8" style="display: none;">
+    <fieldset>
+      <h4>TX Firmware Update</h4>
+      <hr>
+      <table>
+        <tbody>
+        <tr>
+          <td style="width: 150px;">TXs online:</td>
+        </tr>
+        <tr>
+          <td>
+            <select class="form-control" style="overflow:left;" name="list_enc" id="list_enc" /></select>
+          </td>
+          <td>
+            <button class="btn" style="width:111px;height:30px;margin-left: 10px; id="update_update_Devices_TX" onclick="javascript:update_updateDevices();">Search Devices</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="file" id="file_enc" style="width: 300px;" onchange="javascript:file_onchange_enc();"/>
+          </td>
+          <td>
+            <button class="btn" style="width:111px;height:30px;margin-left: 10px; name="burning_enc" id="burning_enc" onclick="javascript:file_burning_enc();">Burning</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div id="processbar_enc" style="width:50%;"></div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </fieldset>
+    <fieldset>
+      <h4>RX Firmware Update</h4>
+      <hr>
+      <table>
+        <tbody>
+        <tr>
+          <td style="width: 150px;">RXs online:</td>
+        </tr>
+        <tr>
+          <td>
+            <select class="form-control" style="overflow:left;" name="list_dec" id="list_dec" /></select>
+          </td>
+          <td>
+            <button class="btn" style="width:111px;height:30px;margin-left: 10px; id="update_update_Devices_RX" onclick="javascript:update_updateDevices();">Search Devices</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="file" id="file_dec" style="width: 300px;" onchange="javascript:file_onchange_dec();"/>
+          </td>
+          <td>
+            <button class="btn" style="width:111px;height:30px;margin-left: 10px; name="burning_dec" id="burning_dec" onclick="javascript:file_burning_dec();">Burning</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div id="processbar_dec" style="width:100%;"></div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <h4>RX Boot Logo (Only support .jpg file and resolution is 1920*1080)</h4>
+      <hr>
+      <table>
+        <tbody>
+        <tr>
+          <td style="width: 150px;">Boot Logo Burning:</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="file" id="file_logo" style="width: 300px;" onchange="javascript:file_onchange_logo();"/>
+          </td>
+          <td>
+            <button class="btn" style="width:111px;height:30px;margin-left: 10px; name="burning_logo" id="burning_logo" onclick="javascript:file_burning_logo();">Burning</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div id="processbar_logo" style="width:50%;"></div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+    </fieldset>
+
+  </div>
+
+</div>
+
+<div id="reboot_div" style="display:none;width:400px;height:300px;border:0px solid blue;z-index:2;display:none;position:absolute;border-top:none">
+  <div class="content">
+    <h1>Reboot Device</h1>
+    <canvas id="progress_canvas" width="600" height="80"></canvas>
+    <div class="content" id="reboot_main_content">
+    </div>
+  </div>
+</div>
+
+<!-- Load UI -->
+<div class="cover" id="loader-panel">
+  <div class="panel">
+    <div class="loader"></div>
+    <p style="padding-left: 75px;"></p>
+  </div>
+</div>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+  // nav
+  $(".tab-1").click(function () {
+    tabNav(1);
+    //mainload();
+    updateDevlist();
+  });
+  $(".tab-2").click(function () {
+    tabNav(2);
+  });
+  $(".tab-3").click(function () {
+    tabNav(3);
+  });
+  $(".tab-4").click(function () {
+    tabNav(4);
+  });
+  $(".tab-5").click(function () {
+    tabNav(5);
+  });
+  $(".tab-6").click(function () {
+    tabNav(6);
+  });
+  $(".tab-7").click(function () {
+    tabNav(7);
+  });
+  $(".tab-8").click(function () {
+    tabNav(8);
+  });
+
+  function tabHide() {
+    for (var i = 1; i < 9; i ++) {
+      $(".tab-" + i).hide();
+      $(".tab-" + i).click(function () {});
+    }
+  }
+
+  function tabNav(index) {
+    // hide other content Tab
+    for (var i = 1; i < 9; i ++) {
+
+      $(".tab-" + i).removeClass("active");
+      $(".content-" + i).hide();
+    }
+    // show selected content Tab
+    $(".tab-" + index).addClass("active");
+    $(".content-" + index).show();
+  }
+
+  $("#tabsn1").click(function () {
+    tabNavSm(1);
+    user_mode('0');
+  });
+  $("#tabsn2").click(function () {
+    tabNavSm(2);
+    user_mode('1');
+  });
+  $("#tabsn3").click(function () {
+    tabNavSm(3);
+    user_mode('2');
+  });
+
+  function tabNavSm(index) {
+    // hide other content Tab
+    for (var i = 1; i < 4; i++) {
+
+      $("#tabsn" + i).removeClass("active");
+      $(".contentsm" + i).hide();
+    }
+    // show selected content Tab
+    $("#tabsn" + index).addClass("active");
+    $(".contentsm" + index).show();
+  }
+
+
+  $('#searching').on('click', function(){
+    showLoader("searching device...");
+    updateDevices();
+  });
+
+  // $(document).on('click',function(){
+  //     close();
+  // });
+
+  document.onkeydown=function(event){
+    var e = event || window.event || arguments.callee.caller.arguments[0];
+    if(e && e.keyCode==27){ // Esc to quit
+      close();
+    }
+  };
+
+</script>
+
+</body>
+</html>

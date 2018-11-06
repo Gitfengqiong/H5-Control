@@ -1,0 +1,140 @@
+@charset "UTF-8";
+/*
+*{
+  padding: 0;
+  margin: 0;
+}
+body{
+  width: auto;
+  height: auto;
+}
+.w1200>div{
+  display: inline-block;
+  border: 5px chartreuse;
+}
+a{
+  text-decoration: none;
+  display: block;
+  width: 200px;
+  padding:10px;
+  background-color:greenyellow;
+}
+a:hover{
+  background-color: black;
+  font-family: "华文正楷";
+  font-weight: bold;
+
+}
+ul{
+  list-style: none;
+  background: url("favicon.ico");
+
+}
+
+#Mainview{
+  width: 100%;
+  position: relative;
+  color: #cccccc;
+  border: 1px solid skyblue;
+}
+
+#Mainview:after{
+  display: block;
+  visibility: hidden;
+  font-size: 0;
+  line-height: 0;
+  clear: both;
+  content: "";
+}
+#discview{
+  float: bottom;
+
+  color: #b3d4fc;
+}
+#srcdiv{
+  float: left;
+  width: auto;
+  border:3px double #004040;
+  background: #b3d4fc;
+  overflow: auto;
+
+
+}
+#srcdiv >div{
+  color: black;
+  margin: 5px;
+}
+#destdiv{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  broder:3px solid #ffaadd;
+  width: 200px;
+  float:right;
+  background: #fca7aa;
+  overflow: auto;
+
+}
+/*#destdiv >div{
+  color: #004040;
+  margin: 5px;
+}
+#deleate{
+
+  clear:both;
+  float: left;
+
+}
+#headline , #footer {
+  width: 100%;
+  height: 30px;
+  background: #888888;
+  text-align: center;
+}
+#footer{
+  clear: bottom;
+}
+*/
+#tab{
+  position: relative;
+  width: 570px;
+}
+#tab div {
+  position: absolute;
+  top: 26px;
+  left: 0;
+  width: 564px;
+  border: solid cornflowerblue;
+  border-width: 0 1px 1px;
+  display: none;
+  color: aqua;
+  background-color: #ffaadd;
+  -webkit-transition: color 4s linear;
+  -o-transition: background-color 4s linear;
+
+}
+
+#tab  .block  {
+  display: block;
+  padding-bottom: 10px;
+}
+#tab h3{
+  float: left;
+  width: 114px;
+  height: 26px;
+  margin: 0 -1px;
+  line-height:26px;
+  font-size: 14px;
+  font-weight: normal;
+  text-align: center;
+  color: #ffaadd;
+  background: aliceblue;
+  cursor: pointer;
+  -webkit-transition: background-color ease;
+  -moz-transition: background-color  ease;
+  -o-transition: background-color ease;
+}
+#tab  .up {
+  background: #004040;
+}
+
